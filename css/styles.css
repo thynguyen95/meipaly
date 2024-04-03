@@ -1,0 +1,597 @@
+/* reset css */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Oswald", sans-serif;
+  font-size: 10px;
+}
+
+.container {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+}
+
+.title p:first-child {
+  font-size: 1.4rem;
+  color: #e62b4a;
+}
+
+.title h2 {
+  font-size: 5rem;
+  color: #fff;
+  font-weight: 400;
+}
+
+.title p:last-child {
+  font-size: 1.6rem;
+  color: #888888;
+  font-weight: 700;
+}
+
+.title.title--black p:first-child {
+  color: #888888;
+}
+
+.title.title.title--black h2 {
+  color: black;
+}
+
+/* html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.6em;
+  1em = 10px - lấy theo html 
+  1.6em = 16px;
+
+  font-size: 1.6rem;
+  1rem = 10px - lấy theo html
+  1.6rem = 16px
+}
+
+.test {
+  font-size: 1.5em;
+  1em = 16px - lấy theo body 
+  1.5em = 24px;
+
+  
+  font-size: 1.5rem;
+
+  1rem = 10px -lấy theo html 
+  1.5rem = 15px
+} */
+
+/* start header  */
+.header {
+  width: 100%;
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 20px 0;
+  /* position fixed: cố định thẻ tại vị trí, scroll trang tới đâu thẻ cũng cố định tại vị trí đó  */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.header__inner {
+  max-width: 1200px;
+  width: 80%;
+  margin: 0 auto;
+  /* padding: 0 20px; */
+  display: flex;
+  /* flex-wrap: cho phép rớt dòng khi không đủ width  */
+  flex-wrap: wrap;
+  /* justify-content: canh theo trục ngang  */
+  justify-content: space-between;
+  /* align-items: canh theo trục dọc */
+  align-items: center;
+}
+
+.header__logo a {
+  color: #fff;
+  text-decoration: none;
+  /* font-size: 30px; */
+  font-size: 3rem;
+}
+
+.header__nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+/* .header__nav li {
+  margin-left: 30px;
+}
+
+.header__nav li:first-child {
+  margin-left: 0;
+} */
+
+/* .header__nav li:last-child a {
+  color: red;
+} */
+
+/* khi li không phải là thẻ li đầu tiên thì sẽ áp dụng css này  */
+.header__nav li:not(:first-child) {
+  margin-left: 30px;
+}
+
+.header__nav li a {
+  font-size: 2rem;
+  color: #fff;
+  /* text-transform: chuyển chữ hoa, chữ thường */
+  text-transform: uppercase;
+  text-decoration: none;
+  /* transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease; */
+
+  /* shorthand */
+  transition: all 0.3s ease-in;
+}
+
+.header__nav li a:hover {
+  color: #e62b4a;
+}
+
+.header__nav li.active a {
+  color: #e62b4a;
+}
+
+/* mã màu hover : #e62b4a */
+/* end header  */
+
+/* start carousel */
+.carousel {
+  background: url("../images/home_slider.jpg") no-repeat center / cover;
+  height: 680px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel__content {
+  text-align: center;
+  color: #fff;
+}
+
+.carousel__content p {
+  font-size: 2.5rem;
+}
+
+.carousel__content h1 {
+  font-size: 7.5rem;
+  /* cách tính tỉ lệ line-height: line-height / font-size  */
+  line-height: 1.2;
+}
+
+/* mã màu hover: #af2239 */
+.carousel__content button {
+  font-size: 1.6rem;
+  background: #e62b4a;
+  border: 1px solid #e62b4a;
+  color: #fff;
+  padding: 10px 20px;
+  margin-top: 30px;
+  transition: all 0.5s linear;
+}
+
+.carousel__content button:hover {
+  background: #af2239;
+  /* transition: all 0.2s linear; */
+}
+
+.carousel__icon {
+  margin-top: 40px;
+}
+
+.carousel__icon i {
+  font-size: 5rem;
+  position: relative;
+  animation: arrowDown 1s linear infinite;
+}
+
+/* @keyframes arrowDown {
+  from {
+    top: 0;
+    opacity: 1;
+  }
+  to {
+    top: 40px;
+    opacity: 0;
+  }
+} */
+
+@keyframes arrowDown {
+  from {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+}
+/* end carousel */
+
+/* .demo {
+  width: 200px;
+  height: 200px;
+  background: red;
+  animation-name: tangWidth;
+  animation-duration: 0.5s;
+  animation-iteration-count: 2;
+  animation-delay: 3s;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate-reverse;
+  animation-fill-mode: none;
+
+  shorthand
+  animation: tangWidth 0.5s ease-in-out 2s 5 forwards;
+} */
+
+/* @keyframes tênkeyframes {
+  from {
+
+  }
+  to {
+
+  }
+} */
+/* 
+@keyframes tangWidth {
+  from {
+    width: 200px;
+  }
+  to {
+    width: 600px;
+  }
+} */
+
+/* @keyframes tangWidth {
+  0% {
+    width: 200px;
+    background: red;
+  }
+  50% {
+    width: 100px;
+    background: yellow;
+  }
+  100% {
+    width: 500px;
+    background: blue;
+  }
+} */
+
+/* demo tranform */
+/* 
+.demo1 {
+  width: 200px;
+  height: 200px;
+  background: blue;
+
+  transform: translateY(30px) translateX(50px);
+  transform: translate(20px, 50px) rotate(30deg);
+} */
+
+/* end carousel  */
+
+/* start service  */
+.service {
+  background: #000;
+  padding: 50px 0;
+}
+
+.service__slider {
+  margin-top: 40px;
+}
+
+.service__item {
+  padding: 0 10px;
+}
+
+.service__inner {
+  background: #fff;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.service__carousel .slick-dots {
+  position: relative;
+  bottom: auto;
+  margin-top: 20px;
+}
+
+.service__carousel .slick-dots li button:before {
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+.slick-dots li button:hover:before {
+  opacity: 1;
+}
+
+.service__carousel .slick-dots li.slick-active button:before {
+  color: #e62b4a;
+}
+
+.service__inner {
+  position: relative;
+}
+
+.service__inner::after {
+  content: "";
+  width: 5px;
+  height: 0;
+  /* transform: translateY(-100%); */
+  background: #e62b4a;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: all 0.3s linear;
+}
+
+.service__inner:hover::after {
+  height: 100%;
+  /* transform: translateY(0); */
+}
+
+/* .text {
+  font-size: 4rem;
+  color: white;
+}
+.text::before {
+  content: "Before ";
+}
+
+.text::after {
+  content: " after";
+} */
+/* end service */
+
+/* start blogs */
+.blogs {
+  background: #f3f3f3;
+  padding: 50px 0;
+}
+
+.blogs__list {
+  display: grid;
+  /* height: 600px; */
+  /* fr - fraction */
+  /* grid-template-columns: khai báo có bao nhiêu cột, mỗi cột chiếm bn phần */
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  /* grid-template-columns: repeat(4, 1fr); */
+  /* grid-template-rows: khai báo có bao nhiêu dòng, mỗi dòng chiếm bn phần */
+  /* grid-template-rows: 1fr 1fr 1fr 1fr; */
+  /* gap: tạo khoảng cách giữa cách cột, dòng */
+  /* gap: 30px 50px; */
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.blogs__item img {
+  width: 100%;
+  height: 100%;
+  /* object-fit: tương tự background-size, giúp hình ảnh không bị bóp méo  */
+  object-fit: cover;
+
+  /* filter: giúp chuyển màu ảnh */
+  filter: grayscale(50%) contrast(50%);
+}
+
+.blogs__item.item1 {
+  /* grid-column: n / m (dùng để gộp cột);
+  n: số line bắt đầu
+  m: số line kết thúc */
+  grid-column: 1 / 3;
+  /* grid-column: n / span m;
+  n: số line bắt đầu 
+  m: số cột phần tử này chiếm  */
+  grid-column: 1 / span 2;
+
+  /* grid-row: dùng để gộp dòng, cú pháp tương tự grid-column; */
+  grid-row: 1 / 3;
+  grid-row: 1 / span 2;
+}
+
+.blogs__item.item10 {
+  grid-column: 3 / span 2;
+  grid-column: 3 / 5;
+  grid-row: 3 / span 2;
+}
+
+.blogs__item {
+  position: relative;
+}
+
+.blogs__overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(230, 43, 74, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+
+.blogs__icon {
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1.5rem;
+  transform: translateY(20px);
+  transition: all 0.3s linear;
+}
+
+.blogs__icon a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #000;
+  transition: all 0.3s linear;
+}
+
+.blogs__icon a:hover {
+  background: #000;
+  color: #fff;
+}
+
+.blogs__text {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  transform: translateY(20px);
+  transition: all 0.3s linear;
+}
+
+/* hover  */
+.blogs__item:hover .blogs__overlay {
+  opacity: 1;
+}
+
+.blogs__item:hover .blogs__icon {
+  transform: translateY(0);
+}
+
+.blogs__item:hover .blogs__text {
+  transform: translateY(0);
+}
+
+/* end blogs */
+
+/* start number  */
+.number {
+  background: #000;
+  padding: 100px 0;
+}
+
+.number__list {
+  display: flex;
+  justify-content: space-around;
+  color: #fff;
+  text-align: center;
+}
+
+.number__item p {
+  font-size: 6rem;
+}
+
+.number__item h3 {
+  font-size: 2rem;
+  color: #888888;
+}
+/* end number  */
+
+/* start experience */
+.experience {
+  background: url(../images/bussiness_img_1.jpg) no-repeat center / cover;
+  /* background-attachment: fixed giúp hình nền cố định vào trang web và tạo cảm giác là nội dung đang lướt trên hình  */
+  background-attachment: fixed;
+  padding: 100px 0;
+}
+
+.experience__content {
+  margin-top: 30px;
+}
+
+.experience__content video {
+  width: 100%;
+  /* box-shadow: tạo độ bóng mờ xung quanh video  */
+  box-shadow: 0 2px 10px 1px #000;
+}
+/* end experience */
+
+/* start contact */
+
+.contact {
+  background: linear-gradient(45deg, red, blue);
+  padding: 100px 0;
+}
+
+.contact__content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.contact__left {
+  width: 60%;
+}
+
+.contact__left iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.contact__right {
+  width: 38%;
+}
+
+.contact__right form input {
+  /* display: block; */
+  /* width: 100%; */
+  font-size: 1.5rem;
+  border: 1px solid #888;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 2px;
+}
+
+.contact__right form textarea {
+  display: block;
+  width: 100%;
+  font-size: 1.5rem;
+  border: 1px solid #888;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 2px;
+}
+/* end contact  */
+
+/* back to top  */
+.cd-top {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: pink;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+
+  /* ẩn đi ở trạng thái mặc định */
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* scroll xuống class này sẽ được js thêm vào và hiện lên  */
+.cd-top--is-visible {
+  /* back-to-top button visible */
+  visibility: visible;
+  opacity: 1;
+}
+
+.cd-top--fade-out {
+  /* reduce button opacity if user keeps scrolling */
+  opacity: 0.5;
+}
